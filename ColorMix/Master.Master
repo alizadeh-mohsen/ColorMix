@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="ColorMix.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>رنگ رهام</title>
+    <link rel="shortcut icon" type="image/png" href="Images/Favicon.png" />
+    <link href="css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="container header">
+                <div class="row">
+                    <div class="col-md-9 col-sm-12 ">
+                        <h1>فروشگاه رنگ رهام (شریفی)</h1>
+                        <h5>ترکیب رنگ با فرمول رنگ کامپیوتری رهام</h5>
+                    </div>
+                    <div class="col-md-3  col-sm-12 text-left" >
+                        <img src="images/Logo.png" />
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-md navbar-nav ">
+                <div class="container ">
+                    <div class="row ">
+                        <div class="col-12">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon">
+                                    <i class="fa fa-bars"></i>
+                                </span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarResponsive">
+                                <ul class="navbar-nav ">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="default.aspx">صفحه اصلی</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="MixOnline.aspx">فرمول ترکیب رنگ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Contact.aspx">تماس با ما</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer class="footer">
+                <div class="container">
+                    <span class="text-dark">تمامی حقوق مادی و معنوی متعلق به رنگ رهام می باشد.</span>
+                    <span class="float-left">Copyright © 2006 - 2019 Roham-paint.ir</span>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

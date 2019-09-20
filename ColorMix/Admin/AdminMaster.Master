@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="ColorMix.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="icon" type="image/png" href="../Images/9.png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/font-awesome.css" rel="stylesheet" />
+    <link href="../CSS/main.css" rel="stylesheet" />
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <nav class="navbar navbar-expand-md navbar-nav ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-12">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <i class="fa fa-bars"></i>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Formuls.aspx">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Make.aspx">Make</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="ColorType.aspx">Color Type</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Unit.aspx">Unit</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="AddFormul.aspx">New Formul</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Notes.aspx">Notes</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+    </form>
+</body>
+</html>

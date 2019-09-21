@@ -35,8 +35,8 @@
             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
             <tr>
                 <td>
-                    <asp:Button class="btn btn-default" ID="btnSearch" runat="server" Text="جستجو" OnClick="btnSearch_Click" />
-                    <asp:Button ID="btnClear" class="btn btn-default" runat="server" Text="پاک کردن" OnClick="btnClear_Click" />
+                    <asp:Button class="btn btn-primary" ID="btnSearch" runat="server" Text="جستجو" OnClick="btnSearch_Click" />
+                    <asp:Button ID="btnClear" class="btn btn-primary" runat="server" Text="پاک کردن" OnClick="btnClear_Click" />
                     &nbsp;</td>
             </tr>
             <tr><td>&nbsp;<asp:Label ID="lblText" runat="server" Text="فرمول های یافت شده:"></asp:Label>
@@ -46,14 +46,16 @@
                 <td colspan="2">
                     <asp:GridView ID="SearchGrid" runat="server" CellPadding="4"
                         OnPageIndexChanging="SearchGrid_PageIndexChanging" Width="100%" AllowPaging="True"
-                        OnSelectedIndexChanged="SearchGrid_SelectedIndexChanged" GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True">
+                        GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="SearchGrid_RowCommand">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                         <Columns>
-                            <asp:BoundField DataField="ColorId" HeaderText="Id"></asp:BoundField>
-                            <asp:CommandField ShowSelectButton="True" HeaderText="مشاهده فرمول" SelectText="انتخاب" >
-                            <ControlStyle ForeColor="Blue" />
-                            </asp:CommandField>
-                            <asp:BoundField DataField="Color Code" HeaderText="کد رنگ" />
+                                <asp:TemplateField HeaderText="کد رنگ">
+                                    <ItemTemplate >
+                                        <asp:LinkButton ID="btnSelect" runat="server" CommandArgument='<%# Bind("ColorId") %>'  Text='<%# Bind("[Color Code]") %>' CommandName="select" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                            <asp:BoundField DataField="ColorId" HeaderText="Id" Visible="False"></asp:BoundField>
                             <asp:BoundField DataField="Make/Company" HeaderText="ماشین/شرکت" />
                             <asp:BoundField DataField="Color Type" HeaderText="نوع رنگ" />
                             <asp:BoundField DataField="comment" HeaderText="شرح" />

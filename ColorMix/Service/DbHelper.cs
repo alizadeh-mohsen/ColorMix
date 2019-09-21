@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Linq;
 
 namespace ColorMix.Service
 {
@@ -55,6 +57,7 @@ namespace ColorMix.Service
             string Date = pc.GetYear(DateTime.Now) + "/" + pc.GetMonth(DateTime.Now) + "/" + pc.GetDayOfMonth(DateTime.Now);
             return Date;
         }
+
         private static string GetMiladiDate()
         {
             GregorianCalendar pc = new GregorianCalendar();
@@ -63,5 +66,23 @@ namespace ColorMix.Service
 
         }
 
+        public static string PersianToEnglish(string persianStr)
+        {
+                Dictionary<string, string> lettersDictionary = new Dictionary<string, string>
+                {
+                    ["۰"] = "0",
+                    ["۱"] = "1",
+                    ["۲"] = "2",
+                    ["۳"] = "3",
+                    ["۴"] = "4",
+                    ["۵"] = "5",
+                    ["۶"] = "6",
+                    ["۷"] = "7",
+                    ["۸"] = "8",
+                    ["۹"] = "9"
+                };
+                return lettersDictionary.Aggregate(persianStr, (current, item) =>
+                    current.Replace(item.Key, item.Value));
+        }
     }
 }

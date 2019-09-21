@@ -9,8 +9,6 @@ namespace ColorMix.Admin
 {
     public partial class Unit : Page
     {
-        int ID;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["token"] == null || string.IsNullOrEmpty(Session["token"].ToString()))
@@ -102,7 +100,6 @@ namespace ColorMix.Admin
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
             using (SqlConnection connection = DbHelper.GetConnection())
             {
                 SqlCommand command = new SqlCommand("DeleteUnit", connection)

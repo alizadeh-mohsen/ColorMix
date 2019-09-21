@@ -102,6 +102,7 @@ namespace ColorMix
             Mix();
             FormulGrid.SelectedIndex = -1;
             hfSelectedWeight.Value = txtEasyMix.Text;
+            pnlWeight.Visible = false;
         }
         private void Calculate()
         {
@@ -150,12 +151,17 @@ namespace ColorMix
 
         #endregion
 
-        protected void FormulGrid_SelectedIndexChanged(object sender, EventArgs e)
+      
+        protected void FormulGrid_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
         {
             try
             {
-                txtEasyMix.Text = hfSelectedWeight.Value = FormulGrid.SelectedRow.Cells[1].Text;
-                ltCode.Text = FormulGrid.SelectedRow.Cells[0].Text;
+                if (e.CommandName.ToLower().Equals("select"))
+                {
+                    txtEasyMix.Text = hfSelectedWeight.Value = e.CommandArgument.ToString();
+                    ltCode.Text = ((System.Web.UI.WebControls.LinkButton) e.CommandSource).Text;
+                }
+                pnlWeight.Visible = true;
                 txtEasyMix.Focus();
             }
             catch (Exception ex)

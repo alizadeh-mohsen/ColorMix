@@ -96,9 +96,10 @@ namespace ColorMix
                 }
                 if (!string.IsNullOrEmpty(txtCode.Text.Trim()))
                 {
-                    com.Parameters.AddWithValue("@code", txtCode.Text);
+                    var code = DbHelper.PersianToEnglish(txtCode.Text.Trim());
+                    com.Parameters.AddWithValue("@code", code);
                 }
-                if (!string.IsNullOrEmpty(txtColorDesc.Text.Trim()))
+                if (!string.IsNullOrEmpty(txtColorDesc.Text.Trim()))    
                 {
                     com.Parameters.AddWithValue("@desc", txtColorDesc.Text.Trim());
                 }
@@ -119,11 +120,11 @@ namespace ColorMix
             }
         }
 
-        protected void SearchGrid_SelectedIndexChanged(object sender, EventArgs e)
+        protected void SearchGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             try
             {
-                var id = int.Parse(SearchGrid.SelectedRow.Cells[0].Text);
+                var id = int.Parse(e.CommandArgument.ToString());
                 Response.Redirect("Formul.aspx?id=" + id);
             }
             catch (Exception ex)

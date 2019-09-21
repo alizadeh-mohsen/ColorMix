@@ -28,15 +28,15 @@
                     <td>
                         <asp:GridView ID="FormulGrid" runat="server" CellPadding="4"
                             Width="100%" AllowPaging="True"
-                            GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="FormulGrid_SelectedIndexChanged">
+                            GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
-                                <%--<asp:BoundField DataField="ColorId" HeaderText="Id"></asp:BoundField>--%>
-                                <asp:BoundField DataField="Code" HeaderText="کد رنگ" />
+                                <asp:TemplateField HeaderText="کد رنگ">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="btnSelect" runat="server" CommandArgument='<%# Bind("Weight") %>' Text='<%# Bind("Code") %>' CommandName="select" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:BoundField DataField="Weight" HeaderText="وزن" />
-                                <asp:CommandField ShowSelectButton="True" HeaderText="" SelectText="تغییر وزن">
-                                    <ControlStyle ForeColor="Blue" />
-                                </asp:CommandField>
                             </Columns>
                             <EditRowStyle BackColor="#999999" />
                             <EmptyDataRowStyle BackColor="#CCCCCC" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
@@ -55,35 +55,44 @@
                 </tr>
                 <tr>
                     <td>وزن کل :
-                <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
+                        &nbsp; گرم
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label style="color: black">
+                                <strong>محاسبه مجدد فرمول بر اساس وزن کل بر حسب گرم:</strong></label>
+                            <asp:TextBox ID="txtBuildBase" CssClass="form-control" Style="text-align: left; width: 150px;" runat="server"></asp:TextBox>
+                            <asp:Button ID="btnCalculate" CssClass="btn btn-primary" runat="server" Text="محاسبه" OnClick="btnCalculate_Click" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Panel Visible="False" ID="pnlWeight" runat="server">
+                            <div class="form-group">
+                                <label style="color: black">
+                                    <strong>محاسبه مجدد فرمول بر اساس تغییر وزن&nbsp;<span style="color: red">
+                                        <asp:Literal runat="server" ID="ltCode"></asp:Literal></span>:</strong></label>
+
+                                <asp:TextBox ID="txtEasyMix" CssClass="form-control" Style="text-align: left; width: 150px;" runat="server"></asp:TextBox>
+
+                                <asp:Button ID="btnEasyMix" CssClass="btn btn-primary" runat="server" Text="محاسبه" OnClick="btnEasyMix_Click" />
+
+                            </div>
+                        </asp:Panel>
 
                     </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            محاسبه مجدد فرمول بر اساس تغییر وزن&nbsp;<strong>
-                                <asp:Literal runat="server" ID="ltCode"></asp:Literal></strong>:
-                            <asp:TextBox ID="txtEasyMix" Style="text-align: left; width: 150px;" runat="server" ></asp:TextBox>
-                            <asp:Button ID="btnEasyMix" runat="server" Text="محاسبه" OnClick="btnEasyMix_Click" />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            محاسبه مجدد فرمول بر اساس وزن&nbsp;کل مورد نظر:
-                            <asp:TextBox ID="txtBuildBase" Style="text-align: left" runat="server"></asp:TextBox>
-                            <asp:Button ID="btnCalculate" runat="server" Text="محاسبه" OnClick="btnCalculate_Click" />
-                        </div>
-                    </td>
-                </tr>
+
                 <tr>
                     <td>
                         <div class="form-group">
@@ -93,10 +102,10 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <%-- <tr>
                     <td>
                         <button class="btn btn-primary" onclick="window.print();">Print</button></td>
-                </tr>
+                </tr>--%>
             </table>
         </div>
     </div>

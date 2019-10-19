@@ -48,6 +48,8 @@ namespace ColorMix
                     lblUnit.Text = colorInfo["Name"].ToString();
                     lblMake.Text = colorInfo["Car"].ToString();
                     lblColorType.Text = colorInfo["Type"].ToString();
+                    lblLastUpdate.Text = colorInfo["LastUpdate"] is DBNull ? "-" : DbHelper.GregorianToShamsi(DateTime.Parse(colorInfo["LastUpdate"].ToString()));
+                    lblComment.Text = colorInfo["Comment"].ToString();
 
                     if (formulTable.Rows.Count > 0)
                     {
@@ -91,7 +93,7 @@ namespace ColorMix
         protected void btnEasyMix_Click(object sender, EventArgs e)
         {
             lblMessage.Text = "";
-            if (string.IsNullOrEmpty(hfSelectedWeight.Value)|| string.IsNullOrEmpty(txtEasyMix.Text))
+            if (string.IsNullOrEmpty(hfSelectedWeight.Value) || string.IsNullOrEmpty(txtEasyMix.Text))
                 return;
             float weight;
             if (float.TryParse(txtEasyMix.Text, out weight) == false)
@@ -151,7 +153,6 @@ namespace ColorMix
 
         #endregion
 
-      
         protected void FormulGrid_RowCommand(object sender, System.Web.UI.WebControls.GridViewCommandEventArgs e)
         {
             try
@@ -159,7 +160,7 @@ namespace ColorMix
                 if (e.CommandName.ToLower().Equals("select"))
                 {
                     txtEasyMix.Text = hfSelectedWeight.Value = e.CommandArgument.ToString();
-                    ltCode.Text = ((System.Web.UI.WebControls.LinkButton) e.CommandSource).Text;
+                    ltCode.Text = ((System.Web.UI.WebControls.LinkButton)e.CommandSource).Text;
                 }
                 pnlWeight.Visible = true;
                 txtEasyMix.Focus();

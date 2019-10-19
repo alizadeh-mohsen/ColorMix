@@ -8,24 +8,42 @@
         <div class="row">
             <table style="width: 60%; margin: 0 auto; font-size: 14px">
                 <tr>
-                    <td>
-                        <p>
-                            کد رنگ &nbsp;: &nbsp;
-                    <asp:Label ID="lblColorCode" runat="server" Font-Bold="True" ForeColor="#FF0066"></asp:Label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    اتومبیل/شرکت&nbsp; :&nbsp;
-                <asp:Label ID="lblMake" runat="server" Font-Bold="True" ForeColor="#FF0066"></asp:Label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    نوع رنگ &nbsp;:&nbsp;
-                <asp:Label ID="lblColorType" runat="server" Font-Bold="True" ForeColor="#FF0066"></asp:Label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    واحد &nbsp;:&nbsp;
-                <asp:Label ID="lblUnit" runat="server" Font-Bold="True" ForeColor="#FF0066"></asp:Label>
-                        </p>
+                    <td>کد رنگ</td>
+                    <td>اتومبیل/شرکت&nbsp;</td>
+                    <td>نوع رنگ
+                    </td>
+                    <td>آخرین تغییر
+                    </td>
+                    <td>واحد
                     </td>
                 </tr>
                 <tr>
                     <td>
+                    <asp:Label ID="lblColorCode" runat="server" ForeColor="red"></asp:Label>
+                    </td>
+                    <td>
+                <asp:Label ID="lblMake" runat="server" ForeColor="red"></asp:Label>
+                    </td>
+                    <td>
+                <asp:Label ID="lblColorType" runat="server" ForeColor="red"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:Label ID="lblLastUpdate" runat="server" ForeColor="red" ></asp:Label>
+                    </td>
+                    <td>
+                <asp:Label ID="lblUnit" runat="server"  ForeColor="red"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">توضیحات:
+                        <asp:Label ID="lblComment" runat="server" ForeColor="red" ></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="5">
                         <asp:GridView ID="FormulGrid" runat="server" CellPadding="4"
                             Width="100%" AllowPaging="True"
                             GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand">
@@ -54,16 +72,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>وزن کل :
+                    <td colspan="5">وزن کل :
                         <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
                         &nbsp; گرم
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td colspan="5">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="5">
                         <div class="form-group">
                             <label style="color: black">
                                 <strong>محاسبه مجدد فرمول بر اساس وزن کل بر حسب گرم:</strong></label>
@@ -73,7 +91,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="5">
                         <asp:Panel Visible="False" ID="pnlWeight" runat="server">
                             <div class="form-group">
                                 <label style="color: black">
@@ -90,11 +108,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td colspan="5">&nbsp;</td>
                 </tr>
 
                 <tr>
-                    <td>
+                    <td colspan="5">
                         <div class="form-group">
                             <asp:Label ID="lblMessage" ForeColor="Red" runat="server" Text=""></asp:Label>
                             <asp:HiddenField ID="hfSelectedWeight" runat="server" />

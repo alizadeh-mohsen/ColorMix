@@ -58,7 +58,7 @@
                             <asp:BoundField DataField="ColorId" HeaderText="Id" Visible="False"></asp:BoundField>
                             <asp:BoundField DataField="Make/Company" HeaderText="ماشین/شرکت" />
                             <asp:BoundField DataField="Color Type" HeaderText="نوع رنگ" />
-                            <asp:BoundField DataField="comment" HeaderText="شرح" />
+                            <asp:BoundField DataField="comment" HeaderText="توضیحات" />
                         </Columns>
                         <EditRowStyle BackColor="#999999" />
                         <EmptyDataRowStyle BackColor="#CCCCCC" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />

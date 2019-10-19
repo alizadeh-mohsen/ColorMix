@@ -87,6 +87,7 @@
     <Content Include="fonts\YekanWeb-Regular.eot" />
     <Content Include="fonts\YekanWeb-Regular.ttf" />
     <Content Include="fonts\YekanWeb-Regular.woff" />
+    <None Include="Properties\PublishProfiles\mypublish.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Properties\PublishProfiles\uuu.pubxml" />
     <None Include="Web.Debug.config">

@@ -40,6 +40,15 @@ namespace ColorMix {
         protected global::System.Web.UI.WebControls.Label lblColorType;
         
         /// <summary>
+        /// lblLastUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLastUpdate;
+        
+        /// <summary>
         /// lblUnit control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace ColorMix {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUnit;
+        
+        /// <summary>
+        /// lblComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblComment;
         
         /// <summary>
         /// FormulGrid control.

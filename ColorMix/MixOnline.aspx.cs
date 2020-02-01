@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ColorMix.Service;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ColorMix.Service;
 
 namespace ColorMix
 {
@@ -59,7 +59,7 @@ namespace ColorMix
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            txtCode.Text = txtColorDesc.Text = "";
+            txtCode.Text = txtColorDesc1.Text = txtColorDesc2.Text = "";
             ddlCar.SelectedIndex = ddlCompany.SelectedIndex = ddlColorType.SelectedIndex = 0;
             txtCode.Focus();
             lblText.Visible = false;
@@ -99,9 +99,13 @@ namespace ColorMix
                     var code = DbHelper.PersianToEnglish(txtCode.Text.Trim());
                     com.Parameters.AddWithValue("@code", code);
                 }
-                if (!string.IsNullOrEmpty(txtColorDesc.Text.Trim()))    
+                if (!string.IsNullOrEmpty(txtColorDesc1.Text.Trim()))
                 {
-                    com.Parameters.AddWithValue("@desc", txtColorDesc.Text.Trim());
+                    com.Parameters.AddWithValue("@desc1", txtColorDesc1.Text.Trim());
+                }
+                if (!string.IsNullOrEmpty(txtColorDesc2.Text.Trim()))
+                {
+                    com.Parameters.AddWithValue("@desc2", txtColorDesc2.Text.Trim());
                 }
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataTable dt = new DataTable();

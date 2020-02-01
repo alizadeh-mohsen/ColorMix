@@ -29,8 +29,9 @@
                 </td>
             </tr>
             <tr>
-                <td><span style="width: 100px; display: block">شرح:</span>
-                    <asp:TextBox ID="txtColorDesc" runat="server" Width="250px"></asp:TextBox></td>
+                <td ><span style="width: 100px; display: block">شرح:</span>
+                    <asp:TextBox ID="txtColorDesc1" runat="server" Width="150px"></asp:TextBox>&nbsp;و&nbsp;
+                    <asp:TextBox ID="txtColorDesc2" runat="server" Width="150px"></asp:TextBox></td>
             </tr>
             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
             <tr>

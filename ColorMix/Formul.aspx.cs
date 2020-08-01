@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Web.UI;
 using ColorMix.Service;
 
@@ -27,9 +28,6 @@ namespace ColorMix
         }
         private void GetFormul(int colorId)
         {
-            //lstColor.Items.Clear();
-            //lstWeight.Items.Clear();
-            //FormulGrid.DataSource = null;
 
             using (SqlConnection dbConnection = DbHelper.GetConnection())
             {
@@ -49,7 +47,9 @@ namespace ColorMix
                     lblMake.Text = colorInfo["Car"].ToString();
                     lblColorType.Text = colorInfo["Type"].ToString();
                     lblLastUpdate.Text = colorInfo["LastUpdate"] is DBNull ? "-" : DbHelper.GregorianToShamsi(DateTime.Parse(colorInfo["LastUpdate"].ToString()));
-                    lblComment.Text = colorInfo["Comment"].ToString();
+                    var comment = colorInfo["Comment"].ToString();
+                    if (!string.IsNullOrEmpty(comment))
+                        lblComment.Text =Regex.Replace(comment, @"(?:\r\n *){1,2} *", "<br>");
 
                     if (formulTable.Rows.Count > 0)
                     {

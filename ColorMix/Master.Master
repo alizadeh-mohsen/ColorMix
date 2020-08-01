@@ -21,7 +21,7 @@
                         <h1>فروشگاه رنگ رهام (شریفی)</h1>
                         <h5>ترکیب رنگ با فرمول رنگ کامپیوتری رهام</h5>
                     </div>
-                    <div class="col-md-3  col-sm-12 text-left" >
+                    <div class="col-md-3  col-sm-12 text-left">
                         <img src="images/Logo.png" />
                     </div>
                 </div>
@@ -44,6 +44,9 @@
                                         <a class="nav-link" href="MixOnline.aspx">فرمول ترکیب رنگ</a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link" href="Notes.aspx">نکات مفید</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="Contact.aspx">تماس با ما</a>
                                     </li>
                                 </ul>
@@ -60,6 +63,10 @@
                 <div class="container">
                     <span class="text-dark">تمامی حقوق مادی و معنوی متعلق به رنگ رهام می باشد.</span>
                     <span class="float-left">Copyright © 2006 - 2019 Roham-paint.ir</span>
+                    <a href="https://www.instagram.com/range_roham/">
+                        <img class="img-fluid  mx-2" alt="Instagram"
+                             src="images/instagram.png" width="32" height="32">
+                    </a>
                 </div>
             </footer>
         </div>

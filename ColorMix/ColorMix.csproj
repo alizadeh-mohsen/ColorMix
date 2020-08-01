@@ -76,6 +76,7 @@
     <Content Include="Images\feature-bg.jpg" />
     <Content Include="Images\footer-bg.jpg" />
     <Content Include="Images\home.png" />
+    <Content Include="Images\instagram.png" />
     <Content Include="Images\roham-paint.ir_2.jpg" />
     <Content Include="Images\roham-paint.ir_3.jpg" />
     <Content Include="Images\roham-paint.ir_3.png" />
@@ -106,6 +107,7 @@
     <Content Include="Images\industrial.jpg" />
     <Content Include="Images\sliderpic1.jpg" />
     <Content Include="MixOnline.aspx" />
+    <Content Include="Notes.aspx" />
     <Content Include="Print.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -209,6 +211,13 @@
     </Compile>
     <Compile Include="MixOnline.aspx.designer.cs">
       <DependentUpon>MixOnline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes.aspx.cs">
+      <DependentUpon>Notes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notes.aspx.designer.cs">
+      <DependentUpon>Notes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>

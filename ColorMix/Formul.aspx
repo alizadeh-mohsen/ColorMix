@@ -8,54 +8,64 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 ">
                 <table class="table table-borderless">
-                     <tr>
-                    <td>
-                        <button class="btn btn-success" onclick="window.print();">Print</button></td>
-                </tr>
+                    <tr>
+                        <td>
+                            <button class="btn btn-success" onclick="window.print();">Print</button>
+                        </td>
+                    </tr>
                     <tr>
                         <td>کد رنگ</td>
                         <td>اتومبیل/شرکت</td>
                         <td>نوع رنگ
                         </td>
-                        <td>آخرین تغییر
+                        <td>تاریخ تغییر
                         </td>
                         <td>واحد
                         </td>
+                        <td>میزان دقت
+                        </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lblColorCode" runat="server" ForeColor="red"></asp:Label>
+                            <asp:Label ID="lblColorCode" runat="server" ForeColor="blue"></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lblMake" runat="server" ForeColor="red"></asp:Label>
+                            <asp:Label ID="lblMake" runat="server" ForeColor="blue"></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lblColorType" runat="server" ForeColor="red"></asp:Label>
+                            <asp:Label ID="lblColorType" runat="server" ForeColor="blue"></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lblLastUpdate" runat="server" ForeColor="red"></asp:Label>
+                            <asp:Label ID="lblLastUpdate" runat="server" ForeColor="blue"></asp:Label>
                         </td>
                         <td>
-                            <asp:Label ID="lblUnit" runat="server" ForeColor="red"></asp:Label>
+                            <asp:Label ID="lblUnit" runat="server" ForeColor="blue"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Label ID="lblAccuracy" runat="server" ForeColor="blue"></asp:Label>
                         </td>
 
                     </tr>
-                    
+
                     <tr>
-                        <td colspan="5">توضیحات:
+                        <td colspan="6">توضیحات:
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="5">
-                            <asp:Label ID="lblComment" runat="server"></asp:Label>
+                        <td colspan="6">
+                            <asp:Label ID="lblComment" ForeColor="blue" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">موارد کاربرد:  <asp:Label ID="lblUsage" ForeColor="blue" runat="server"></asp:Label>
                         </td>
                     </tr>
 
-                    <tr>
-                        <td colspan="5">
+                    <tr >
+                        <td colspan="6" class="justify-content-center">
                             <asp:GridView ID="FormulGrid" runat="server" CellPadding="4"
-                                Width="100%" AllowPaging="True"
-                                GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand">
+                                Width="90%" AllowPaging="True" 
+                                GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand" BorderStyle="Solid">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
                                     <asp:TemplateField HeaderText="کد رنگ">
@@ -81,28 +91,28 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="5">وزن کل :
+                        <td colspan="6">وزن کل :
                         <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
                             &nbsp; گرم
                         </td>
                     </tr>
-                    
-                <tr>
-                    <td colspan="5">
-                        <div class="form-group">
-                            <label style="color: black">
-                                <strong>محاسبه مجدد فرمول بر اساس وزن کل بر حسب گرم:</strong></label>
-                            <asp:TextBox ID="txtBuildBase" class="form-control my-2" Style="text-align: left; width: 150px;" runat="server"></asp:TextBox>
-                            <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" Text="محاسبه" OnClick="btnCalculate_Click" />
-                        </div>
-                    </td>
-                </tr>
+
                     <tr>
-                        <td colspan="5">
+                        <td colspan="6">
+                            <div class="form-group">
+                                <label style="color: black">
+                                    <strong>محاسبه مجدد فرمول بر اساس وزن کل بر حسب گرم:</strong></label>
+                                <asp:TextBox ID="txtBuildBase" class="form-control my-2" Style="text-align: left; width: 150px;" runat="server"></asp:TextBox>
+                                <asp:Button ID="btnCalculate" class="btn btn-primary" runat="server" Text="محاسبه" OnClick="btnCalculate_Click" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
                             <asp:Panel Visible="False" ID="pnlWeight" runat="server">
                                 <div class="form-group">
                                     <label style="color: black">
-                                        <strong>محاسبه مجدد فرمول بر اساس تغییر وزن&nbsp;<span style="color: red">
+                                        <strong>محاسبه مجدد فرمول بر اساس تغییر وزن&nbsp;<span style="color: blue">
                                             <asp:Literal runat="server" ID="ltCode"></asp:Literal></span>:</strong></label>
                                     <asp:TextBox ID="txtEasyMix" CssClass="form-control" Style="text-align: left; width: 150px;" runat="server"></asp:TextBox>
                                     <asp:Button ID="btnEasyMix" CssClass="btn btn-primary" runat="server" Text="محاسبه" OnClick="btnEasyMix_Click" />
@@ -113,9 +123,9 @@
                     </tr>
 
                     <tr>
-                        <td colspan="5">
+                        <td colspan="6">
                             <div class="form-group">
-                                <asp:Label ID="lblMessage" ForeColor="Red" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="lblMessage" ForeColor="blue" runat="server" Text=""></asp:Label>
                                 <asp:HiddenField ID="hfSelectedWeight" runat="server" />
                                 <asp:HiddenField ID="hfTable" runat="server" />
                             </div>

@@ -1,9 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MixOnline.aspx.cs" Inherits="ColorMix.MixOnline" %>
 
+<%@ Import Namespace="System.Globalization" %>
+<%@ Register TagPrefix="rhp" Namespace="Heidarpour.WebControlUI" Assembly="Heidarpour.WebControlUI" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <script src="js/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+    <script src="js/JavaScript.js"></script>
     <div class="container my-2">
         <div class="form-row">
             <div class="col-md-6 form-group ">
@@ -31,6 +35,18 @@
                     <asp:DropDownList ID="ddlColorType" runat="server" class="form-control">
                     </asp:DropDownList>
             </div>
+
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                موارد استفاده:
+                <asp:TextBox ID="txtUsage" runat="server" class="form-control"></asp:TextBox>
+            </div>
+
+            <div class="col-md-6 form-group">
+                تاریخ:<br />
+                <rhp:DatePicker ID="DatePicker1" runat="server"></rhp:DatePicker>
+            </div>
         </div>
         <div class="form-row">
             <div class="col-md-6 form-group">
@@ -44,6 +60,7 @@
             </div>
         </div>
 
+
     </div>
     <div class="container mb-3">
         <div class="row">
@@ -54,7 +71,7 @@
                 <asp:Label ID="lblCount" runat="server"></asp:Label>
             </div>
         </div>
-        
+
     </div>
 
     <div class="container mb-4">
@@ -77,6 +94,14 @@
                         <asp:BoundField DataField="Make/Company" HeaderText="ماشین/شرکت" />
                         <asp:BoundField DataField="Color Type" HeaderText="نوع رنگ" />
                         <asp:BoundField DataField="comment" HeaderText="توضیحات" />
+                        <asp:BoundField DataField="usage" HeaderText="موارد کاربرد" />
+
+                        <asp:TemplateField HeaderText="تاریخ">
+                            <ItemTemplate>
+                                <asp:Label ID="lblDate" runat="server" Text='<%# ConvertToShamsi( Eval("lastUpdate").ToString()) %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <EmptyDataRowStyle BackColor="#CCCCCC" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
@@ -99,9 +124,5 @@
             </div>
         </div>
     </div>
-
-
-
-
 
 </asp:Content>

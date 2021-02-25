@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -63,7 +64,10 @@ namespace ColorMix
             ddlCar.SelectedIndex = ddlCompany.SelectedIndex = ddlColorType.SelectedIndex = 0;
             txtCode.Focus();
             lblText.Visible = false;
-            lblCount.Text = "";
+            lblCount.Text =
+                txtUsage.Text =
+            DatePicker1.Text = "";
+            DatePicker1.Date = null;
         }
 
         protected void SearchGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -107,6 +111,14 @@ namespace ColorMix
                 {
                     com.Parameters.AddWithValue("@desc2", txtColorDesc2.Text.Trim());
                 }
+                if (!string.IsNullOrEmpty(txtUsage.Text.Trim()))
+                {
+                    com.Parameters.AddWithValue("@usage", txtUsage.Text.Trim());
+                }
+                if (!string.IsNullOrEmpty(DatePicker1.Text))
+                {
+                    com.Parameters.AddWithValue("@date", DatePicker1.Date);
+                }
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataTable dt = new DataTable();
 
@@ -120,6 +132,7 @@ namespace ColorMix
                 catch (Exception ex)
                 {
                     lblMessage.Text = "خطا" + ex.Message;
+
                 }
             }
         }
@@ -135,6 +148,16 @@ namespace ColorMix
             {
                 lblMessage.Text = ex.Message;
             }
+        }
+
+        protected string ConvertToShamsi(string lastUpdate)
+        {
+            if (string.IsNullOrEmpty(lastUpdate))
+                return "";
+
+            DateTime d = DateTime.Parse(lastUpdate);
+            PersianCalendar pc = new PersianCalendar();
+            return $"{pc.GetYear(d)}/{pc.GetMonth(d)}/{pc.GetDayOfMonth(d)}";
         }
     }
 }

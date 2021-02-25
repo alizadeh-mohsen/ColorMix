@@ -40,6 +40,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Heidarpour.WebControlUI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Shared\Heidarpour.WebControlUI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -82,6 +86,10 @@
     <Content Include="Images\roham-paint.ir_3.png" />
     <Content Include="Images\roham-paint.ir_4.jpg" />
     <Content Include="js\bootstrap.min.js" />
+    <None Include="js\jquery-1.4.1-vsdoc.js" />
+    <Content Include="js\JavaScript.js" />
+    <Content Include="js\jquery-1.4.1.js" />
+    <Content Include="js\jquery-1.4.1.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="Master.Master" />
     <Content Include="Admin\AdminMaster.Master" />
@@ -109,6 +117,7 @@
     <Content Include="MixOnline.aspx" />
     <Content Include="Notes.aspx" />
     <Content Include="Print.aspx" />
+    <Content Include="Shared\Heidarpour.WebControlUI.dll" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

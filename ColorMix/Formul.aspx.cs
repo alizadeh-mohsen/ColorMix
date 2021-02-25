@@ -46,6 +46,8 @@ namespace ColorMix
                     lblUnit.Text = colorInfo["Name"].ToString();
                     lblMake.Text = colorInfo["Car"].ToString();
                     lblColorType.Text = colorInfo["Type"].ToString();
+                    lblAccuracy.Text = colorInfo["accuracy"].ToString();
+                    lblUsage.Text = colorInfo["usage"].ToString();
                     lblLastUpdate.Text = colorInfo["LastUpdate"] is DBNull ? "-" : DbHelper.GregorianToShamsi(DateTime.Parse(colorInfo["LastUpdate"].ToString()));
                     var comment = colorInfo["Comment"].ToString();
                     if (!string.IsNullOrEmpty(comment))

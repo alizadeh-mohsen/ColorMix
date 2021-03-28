@@ -8,6 +8,17 @@
     <link rel="shortcut icon" type="image/png" href="Images/Favicon.png" />
     <link href="css/bootstrap-rtl.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
+    <meta charset=utf-8 />
+    <meta name=description
+          content="رنگ فروشی، خرید رنگ اینترنتی، رنگ ماشین، رنگ اتومبیل ، رنگ صنعتی ، کاتالوگ رنگ، ترکیب رنگ کامپیوتری، قلم خشگیر، بتونه آستر فوری ، اسپری رنگ ، ابزار رنگ، رنگ ساختمانی، رنگ کامپیوتری" />
+    <link rel=canonical href=http://roham-paint.ir />
+    <meta property=og:site_name content=roham-paint.ir/>
+    <meta property=og:type content=website />
+    <meta property=og:url content=http://roham-paint.ir />
+    <meta property=og:title content="رنگ اتومبیل ، ساختمانی و صنعتی، ابزار رنگ، ترکیب رنگ کامپیوتری" />
+    <meta property=og:description
+          content="رنگ اتومبیل ، ساختمانی و صنعتی، ابزار رنگ، ترکیب رنگ کامپیوتری" />
+    <meta property=og:locale content=fa_IR />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -42,6 +53,9 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="MixOnline.aspx">فرمول ترکیب رنگ</a>
+                                    </li> 
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Catalogs.aspx">کاتالوگ رنگ</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="Notes.aspx">نکات مفید</a>

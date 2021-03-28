@@ -73,6 +73,7 @@
     <Content Include="Admin\Notes.aspx" />
     <Content Include="Admin\Unit.aspx" />
     <Content Include="Admin\UpdateFormul.aspx" />
+    <Content Include="Catalogs.aspx" />
     <Content Include="CSS\bootstrap-rtl.css" />
     <Content Include="CSS\main.css" />
     <Content Include="Formul.aspx" />
@@ -85,7 +86,11 @@
     <Content Include="Images\roham-paint.ir_3.jpg" />
     <Content Include="Images\roham-paint.ir_3.png" />
     <Content Include="Images\roham-paint.ir_4.jpg" />
+    <Content Include="Images\SolventBase.jpg" />
+    <Content Include="Images\WaterBase.jpg" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="Data\Water-Base.pdf" />
+    <Content Include="Data\Solvent-Base.pdf" />
     <None Include="js\jquery-1.4.1-vsdoc.js" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\jquery-1.4.1.js" />
@@ -185,6 +190,13 @@
     </Compile>
     <Compile Include="Admin\UpdateFormul.aspx.designer.cs">
       <DependentUpon>UpdateFormul.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogs.aspx.cs">
+      <DependentUpon>Catalogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogs.aspx.designer.cs">
+      <DependentUpon>Catalogs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

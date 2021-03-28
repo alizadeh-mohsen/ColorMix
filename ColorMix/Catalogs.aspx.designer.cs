@@ -11,7 +11,7 @@ namespace ColorMix
 {
 
 
-    public partial class Default
+    public partial class Catalogs
     {
     }
 }

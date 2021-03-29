@@ -10,7 +10,7 @@
     <link href="../CSS/font-awesome.css" rel="stylesheet" />
     <link href="../CSS/main.css" rel="stylesheet" />
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-1.10.2.min.js"></script>
 </head>
 <body style="background-color: #ccddff">
     <form id="form1" runat="server">

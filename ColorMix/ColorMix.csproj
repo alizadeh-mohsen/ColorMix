@@ -44,6 +44,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Shared\Heidarpour.WebControlUI.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -73,6 +77,13 @@
     <Content Include="Admin\Notes.aspx" />
     <Content Include="Admin\Unit.aspx" />
     <Content Include="Admin\UpdateFormul.aspx" />
+    <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\ColorMix.dll" />
+    <Content Include="bin\ColorMix.pdb" />
+    <Content Include="bin\Heidarpour.WebControlUI.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
     <Content Include="Catalogs.aspx" />
     <Content Include="CSS\bootstrap-rtl.css" />
     <Content Include="CSS\main.css" />
@@ -91,16 +102,16 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="Data\Water-Base.pdf" />
     <Content Include="Data\Solvent-Base.pdf" />
-    <None Include="js\jquery-1.4.1-vsdoc.js" />
     <Content Include="js\JavaScript.js" />
-    <Content Include="js\jquery-1.4.1.js" />
-    <Content Include="js\jquery-1.4.1.min.js" />
-    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\modernizr-2.6.2.js" />
     <Content Include="Master.Master" />
     <Content Include="Admin\AdminMaster.Master" />
     <Content Include="fonts\YekanWeb-Regular.eot" />
     <Content Include="fonts\YekanWeb-Regular.ttf" />
     <Content Include="fonts\YekanWeb-Regular.woff" />
+    <Content Include="Master.Mobile.Master" />
+    <Content Include="bin\ColorMix.dll.config" />
     <None Include="Properties\PublishProfiles\mypublish.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Properties\PublishProfiles\uuu.pubxml" />
@@ -123,6 +134,7 @@
     <Content Include="Notes.aspx" />
     <Content Include="Print.aspx" />
     <Content Include="Shared\Heidarpour.WebControlUI.dll" />
+    <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -226,6 +238,13 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
+    <Compile Include="Master.Mobile.Master.cs">
+      <DependentUpon>Master.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Mobile.Master.designer.cs">
+      <DependentUpon>Master.Mobile.Master</DependentUpon>
+    </Compile>
     <Compile Include="MixOnline.aspx.cs">
       <DependentUpon>MixOnline.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,6 +268,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DbHelper.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

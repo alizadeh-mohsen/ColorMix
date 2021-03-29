@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class=" content">
-        <section class="blog  text-center">
+        <section class="text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 text-center">

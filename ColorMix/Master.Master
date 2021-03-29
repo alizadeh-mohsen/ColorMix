@@ -4,73 +4,66 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>رنگ رهام</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
     <link rel="shortcut icon" type="image/png" href="Images/Favicon.png" />
     <link href="css/bootstrap-rtl.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
-    <meta charset=utf-8 />
-    <meta name=description
-          content="رنگ فروشی، خرید رنگ اینترنتی، رنگ ماشین، رنگ اتومبیل ، رنگ صنعتی ، کاتالوگ رنگ، ترکیب رنگ کامپیوتری، قلم خشگیر، بتونه آستر فوری ، اسپری رنگ ، ابزار رنگ، رنگ ساختمانی، رنگ کامپیوتری" />
-    <link rel=canonical href=http://roham-paint.ir />
-    <meta property=og:site_name content=roham-paint.ir/>
-    <meta property=og:type content=website />
-    <meta property=og:url content=http://roham-paint.ir />
-    <meta property=og:title content="رنگ اتومبیل ، ساختمانی و صنعتی، ابزار رنگ، ترکیب رنگ کامپیوتری" />
-    <meta property=og:description
-          content="رنگ اتومبیل ، ساختمانی و صنعتی، ابزار رنگ، ترکیب رنگ کامپیوتری" />
-    <meta property=og:locale content=fa_IR />
+
+    <meta name="description"
+        content="رنگ فروشی، خرید رنگ اینترنتی، رنگ ماشین، رنگ اتومبیل ، رنگ صنعتی ، کاتالوگ رنگ، ترکیب رنگ کامپیوتری، قلم خشگیر، بتونه آستر فوری ، اسپری رنگ ، ابزار رنگ، رنگ ساختمانی، رنگ کامپیوتری" />
+    <link rel="canonical" href="http://roham-paint.ir" />
+    <meta property="og:site_name" content="roham-paint.ir" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://roham-paint.ir" />
+    <meta property="og:title" content="رنگ اتومبیل ، ساختمانی و صنعتی، ابزار رنگ، ترکیب رنگ کامپیوتری" />
+    <meta property="og:description"
+        content="رنگ اتومبیل ، ساختمانی و صنعتی، ابزار رنگ، ترکیب رنگ کامپیوتری" />
+    <meta property="og:locale" content="fa_IR" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <div class="container header">
-                <div class="row">
-                    <div class="col-md-9 col-sm-12 ">
-                        <h1>فروشگاه رنگ رهام (شریفی)</h1>
-                        <h5>ترکیب رنگ با فرمول رنگ کامپیوتری رهام</h5>
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="container">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 text-center">
+                        <span class="blog-header-logo text-danger">
+                            فروشگاه رنگ رهام (شریفی)<span><br/>
+                            ترکیب رنگ کامپیوتری</span>
+                        </span>
                     </div>
-                    <div class="col-md-3  col-sm-12 text-left">
-                        <img src="images/Logo.png" />
+                    <div class="col-4 pt-1">
+                        <a class="link-secondary" href="http://roham-paint.ir/">
+                            <img  class="img-fluid" src="images/Logo.png" alt="فروشگاه رنگ رهام" /></a>
                     </div>
                 </div>
+            </header>
+
+            <div class="nav-scroller py-1 mb-2 bg-primary">
+                <nav class="nav d-flex justify-content-start">
+                    <a class="p-2 text-light" href="Default.aspx">صفحه اصلی</a>
+                    <a class="p-2 text-light" href="MixOnline.aspx">فرمول ترکیب رنگ</a>
+                    <a class="p-2 text-light" href="Catalogs.aspx">کاتالوگ رنگ</a>
+                    <a class="p-2 text-light" href="Notes.aspx">نکات مفید</a>
+                    <a class="p-2 text-light" href="Contact.aspx">تماس با ما</a>
+                </nav>
             </div>
-            <nav class="navbar navbar-expand-md navbar-nav ">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-12">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon">
-                                    <i class="fa fa-bars"></i>
-                                </span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarResponsive">
-                                <ul class="navbar-nav ">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="default.aspx">صفحه اصلی</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="MixOnline.aspx">فرمول ترکیب رنگ</a>
-                                    </li> 
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="Catalogs.aspx">کاتالوگ رنگ</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="Notes.aspx">نکات مفید</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="Contact.aspx">تماس با ما</a>
-                                    </li>
-                                </ul>
-                            </div>
+        </div>
 
-                        </div>
 
-                    </div>
-                </div>
-            </nav>
+        <div class="container body-content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <footer class="footer">
@@ -79,7 +72,7 @@
                     <span class="float-left">Copyright © 2006 - 2019 Roham-paint.ir</span>
                     <a href="https://www.instagram.com/range_roham/">
                         <img class="img-fluid  mx-2" alt="Instagram"
-                             src="images/instagram.png" width="32" height="32">
+                            src="images/instagram.png" width="32" height="32" />
                     </a>
                 </div>
             </footer>

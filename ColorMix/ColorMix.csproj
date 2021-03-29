@@ -110,7 +110,6 @@
     <Content Include="fonts\YekanWeb-Regular.eot" />
     <Content Include="fonts\YekanWeb-Regular.ttf" />
     <Content Include="fonts\YekanWeb-Regular.woff" />
-    <Content Include="Master.Mobile.Master" />
     <Content Include="bin\ColorMix.dll.config" />
     <None Include="Properties\PublishProfiles\mypublish.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
@@ -237,13 +236,6 @@
     </Compile>
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Master.Mobile.Master.cs">
-      <DependentUpon>Master.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Master.Mobile.Master.designer.cs">
-      <DependentUpon>Master.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="MixOnline.aspx.cs">
       <DependentUpon>MixOnline.aspx</DependentUpon>

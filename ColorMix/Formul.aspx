@@ -14,15 +14,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>کد رنگ</td>
-                        <td>اتومبیل/شرکت</td>
-                        <td>نوع رنگ
-                        </td>
-                        <td>تاریخ تغییر
+                        <td>کد</td>
+                        <td>برند</td>
+                        <td>نوع</td>
+                        <td>تاریخ
                         </td>
                         <td>واحد
                         </td>
-                        <td>میزان دقت
+                        <td>دقت
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +67,7 @@
                                 GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand" BorderStyle="Solid">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:TemplateField HeaderText="کد رنگ">
+                                    <asp:TemplateField HeaderText="کد">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="btnSelect" runat="server" CommandArgument='<%# Bind("Weight") %>' Text='<%# Bind("Code") %>' CommandName="select" />
                                         </ItemTemplate>

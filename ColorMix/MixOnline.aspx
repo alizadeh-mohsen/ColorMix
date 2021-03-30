@@ -66,8 +66,11 @@
             <div class="col">
                 <asp:Button class="btn btn-primary" ID="btnSearch" runat="server" Text="جستجو" OnClick="btnSearch_Click" />
                 <asp:Button ID="btnClear" class="btn btn-primary " runat="server" Text="پاک کردن" OnClick="btnClear_Click" />
-                <asp:Label class="mx-2" ID="lblText" runat="server" Text="فرمول های یافت شده:"></asp:Label>
-                <asp:Label ID="lblCount" runat="server"></asp:Label>
+
+               <asp:Label ID="lblCount" runat="server"></asp:Label>
+                <asp:Label  ID="lblText" runat="server" Text="فرمول"></asp:Label>
+
+
             </div>
         </div>
 
@@ -83,17 +86,17 @@
                     GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="SearchGrid_RowCommand">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:TemplateField HeaderText="کد رنگ">
+                        <asp:TemplateField HeaderText="کد">
                             <ItemTemplate>
                                 <asp:LinkButton ID="btnSelect" runat="server" CommandArgument='<%# Bind("ColorId") %>' Text='<%# Bind("[Color Code]") %>' CommandName="select" />
                             </ItemTemplate>
                         </asp:TemplateField>
 
                         <asp:BoundField DataField="ColorId" HeaderText="Id" Visible="False"></asp:BoundField>
-                        <asp:BoundField DataField="Make/Company" HeaderText="ماشین/شرکت" />
-                        <asp:BoundField DataField="Color Type" HeaderText="نوع رنگ" />
+                        <asp:BoundField DataField="Make/Company" HeaderText="برند" />
+                        <asp:BoundField DataField="Color Type" HeaderText="نوع" />
                         <asp:BoundField DataField="comment" HeaderText="توضیحات" />
-                        <asp:BoundField DataField="usage" HeaderText="موارد کاربرد" />
+                        <asp:BoundField DataField="usage" HeaderText="کاربرد" />
 
                         <asp:TemplateField HeaderText="تاریخ">
                             <ItemTemplate>

@@ -93,6 +93,7 @@
     <Content Include="Images\footer-bg.jpg" />
     <Content Include="Images\home.png" />
     <Content Include="Images\instagram.png" />
+    <Content Include="Images\Ral.jpg" />
     <Content Include="Images\roham-paint.ir_2.jpg" />
     <Content Include="Images\roham-paint.ir_3.jpg" />
     <Content Include="Images\roham-paint.ir_3.png" />
@@ -111,6 +112,7 @@
     <Content Include="fonts\YekanWeb-Regular.ttf" />
     <Content Include="fonts\YekanWeb-Regular.woff" />
     <Content Include="bin\ColorMix.dll.config" />
+    <Content Include="Data\Ral.pdf" />
     <None Include="Properties\PublishProfiles\mypublish.pubxml" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Properties\PublishProfiles\uuu.pubxml" />

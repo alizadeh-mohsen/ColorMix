@@ -103,15 +103,6 @@ namespace ColorMix {
         protected global::System.Web.UI.WebControls.Button btnClear;
         
         /// <summary>
-        /// lblText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblText;
-        
-        /// <summary>
         /// lblCount control.
         /// </summary>
         /// <remarks>
@@ -119,6 +110,15 @@ namespace ColorMix {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCount;
+        
+        /// <summary>
+        /// lblText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblText;
         
         /// <summary>
         /// SearchGrid control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MixOnline.aspx.cs" Inherits="ColorMix.MixOnline" %>
+﻿<%@ Page Title="فرمول رنگ" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MixOnline.aspx.cs" Inherits="ColorMix.MixOnline" %>
 
 <%@ Register TagPrefix="rhp" Namespace="Heidarpour.WebControlUI" Assembly="Heidarpour.WebControlUI" %>
 
@@ -96,8 +96,7 @@
                         <asp:BoundField DataField="Make/Company" HeaderText="برند" />
                         <asp:BoundField DataField="Color Type" HeaderText="نوع" />
                         <asp:BoundField DataField="comment" HeaderText="توضیحات" />
-                        <asp:BoundField DataField="usage" HeaderText="کاربرد" />
-
+                        <asp:BoundField DataField="Unit" HeaderText="واحد" />
                         <asp:TemplateField HeaderText="تاریخ">
                             <ItemTemplate>
                                 <asp:Label ID="lblDate" runat="server" Text='<%# ConvertToShamsi( Eval("lastUpdate").ToString()) %>'></asp:Label>

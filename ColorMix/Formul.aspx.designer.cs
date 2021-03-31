@@ -67,6 +67,15 @@ namespace ColorMix {
         protected global::System.Web.UI.WebControls.Label lblAccuracy;
         
         /// <summary>
+        /// lblBase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBase;
+        
+        /// <summary>
         /// lblComment control.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace ColorMix {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotal;
+        
+        /// <summary>
+        /// rblBase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblBase;
         
         /// <summary>
         /// txtBuildBase control.

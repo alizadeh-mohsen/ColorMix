@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Catalogs.aspx.cs" Inherits="ColorMix.Catalogs" %>
+﻿<%@ Page Title="کاتالوگ رنگ" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Catalogs.aspx.cs" Inherits="ColorMix.Catalogs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class=" content">
-        <section class="blog  text-center">
+        <section class=" text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 text-center">
@@ -37,7 +37,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="col-md-4 text-center">
                         <div class="card mb-4">
                             <a href="Data/Ral.pdf">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Formul.aspx.cs" Inherits="ColorMix.Formul" %>
+﻿<%@ Page Title="رنگ کامپیوتری" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Formul.aspx.cs" Inherits="ColorMix.Formul" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,7 +7,7 @@
     <div class="container  ">
         <div class="row justify-content-center">
             <div class="col-lg-10 ">
-                <table class="table table-borderless">
+                <table class="table table-borderless" >
                     <tr>
                         <td>
                             <button class="btn btn-success" onclick="window.print();">Print</button>
@@ -22,6 +22,8 @@
                         <td>واحد
                         </td>
                         <td>دقت
+                        </td>
+                        <td>پایه رنگ
                         </td>
                     </tr>
                     <tr>
@@ -43,25 +45,28 @@
                         <td>
                             <asp:Label ID="lblAccuracy" runat="server" ForeColor="blue"></asp:Label>
                         </td>
+                        <td>
+                            <asp:Label ID="lblBase" runat="server" ForeColor="blue"></asp:Label>
+                        </td>
 
                     </tr>
 
                     <tr>
-                        <td colspan="6">توضیحات:
+                        <td colspan="7">توضیحات:
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
                             <asp:Label ID="lblComment" ForeColor="blue" runat="server"></asp:Label>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="6">موارد کاربرد:  <asp:Label ID="lblUsage" ForeColor="blue" runat="server"></asp:Label>
+                        <td colspan="7">موارد کاربرد:  <asp:Label ID="lblUsage" ForeColor="blue" runat="server"></asp:Label>
                         </td>
                     </tr>
 
                     <tr >
-                        <td colspan="6" class="justify-content-center">
+                        <td colspan="7" class="justify-content-center">
                             <asp:GridView ID="FormulGrid" runat="server" CellPadding="4"
                                 Width="90%" AllowPaging="True" 
                                 GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand" BorderStyle="Solid">
@@ -90,14 +95,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="6">وزن کل :
+                        <td colspan="7">وزن کل :
                         <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
                             &nbsp; گرم
                         </td>
                     </tr>
 
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
+                            <asp:RadioButtonList ID="rblBase" runat="server" CssClass="spaced" OnSelectedIndexChanged="rblBase_SelectedIndexChanged" RepeatDirection="Horizontal">
+                            </asp:RadioButtonList>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="7">
                             <div class="form-group">
                                 <label style="color: black">
                                     <strong>محاسبه مجدد فرمول بر اساس وزن کل بر حسب گرم:</strong></label>
@@ -107,7 +119,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
                             <asp:Panel Visible="False" ID="pnlWeight" runat="server">
                                 <div class="form-group">
                                     <label style="color: black">
@@ -122,7 +134,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
                             <div class="form-group">
                                 <asp:Label ID="lblMessage" ForeColor="blue" runat="server" Text=""></asp:Label>
                                 <asp:HiddenField ID="hfSelectedWeight" runat="server" />

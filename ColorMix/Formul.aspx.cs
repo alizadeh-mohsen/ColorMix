@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using ColorMix.Service;
 
 namespace ColorMix
@@ -15,17 +16,54 @@ namespace ColorMix
         {
             if (!IsPostBack)
             {
-                if (Request.QueryString["Id"] != null)
+                if (string.IsNullOrEmpty(Request.QueryString["Id"]))
+                    Response.Redirect("MixOnline.aspx");
+
+                var colorId = int.Parse(Request.QueryString["id"]);
+                GetFormul(colorId);
+                GetUnits();
+            }
+        }
+
+        private void GetUnits()
+        {
+            rblBase.Controls.Clear();
+
+            using (SqlConnection dbConnection = DbHelper.GetConnection())
+            {
+                SqlCommand com = new SqlCommand("GetColorUnits", dbConnection) { CommandType = CommandType.StoredProcedure };
+                com.Parameters.AddWithValue("@colorCode", lblColorCode.Text.Trim());
+
+
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                try
                 {
-                    var colorId = int.Parse(Request.QueryString["id"]);
-                    GetFormul(colorId);
+                    da.Fill(ds);
+                    foreach (DataRow unit in ds.Tables[0].Rows)
+                    {
+                        ListItem li = new ListItem
+                        {
+                            Value = unit.ItemArray[0].ToString(),
+                            Text = unit.ItemArray[1].ToString(),
+                            Selected = unit.ItemArray[1].ToString() == lblUnit.Text
+
+                        };
+
+                        rblBase.Items.Add(li);
+                    }
+
+                    rblBase.CssClass = "spaced";
                 }
-                else
+                catch (Exception ex)
                 {
-                    lblMessage.Text = "خطا";
+                    lblMessage.Text = " : خطا" + ex.Message;
                 }
             }
         }
+
+
+
         private void GetFormul(int colorId)
         {
 
@@ -44,6 +82,7 @@ namespace ColorMix
 
                     lblColorCode.Text = colorInfo["Code"].ToString();
                     lblUnit.Text = colorInfo["Name"].ToString();
+                    lblBase.Text = colorInfo["BaseName"].ToString();
                     lblMake.Text = colorInfo["Car"].ToString();
                     lblColorType.Text = colorInfo["Type"].ToString();
                     lblAccuracy.Text = colorInfo["accuracy"].ToString();
@@ -51,7 +90,7 @@ namespace ColorMix
                     lblLastUpdate.Text = colorInfo["LastUpdate"] is DBNull ? "-" : DbHelper.GregorianToShamsi(DateTime.Parse(colorInfo["LastUpdate"].ToString()));
                     var comment = colorInfo["Comment"].ToString();
                     if (!string.IsNullOrEmpty(comment))
-                        lblComment.Text =Regex.Replace(comment, @"(?:\r\n *){1,2} *", "<br>");
+                        lblComment.Text = Regex.Replace(comment, @"(?:\r\n *){1,2} *", "<br>");
 
                     if (formulTable.Rows.Count > 0)
                     {
@@ -60,8 +99,6 @@ namespace ColorMix
                         float total = 0;
                         foreach (DataRow drFormul in formulTable.Rows)
                         {
-                            // lstColor.Items.Add(drFormul["Code"].ToString());
-                            // lstWeight.Items.Add(string.Format("{0:0.##}", drFormul["Weight"]));
                             total += float.Parse(drFormul["Weight"].ToString());
                         }
                         lblTotal.Text = lblUnit.Text.Contains("gr") ? string.Format("{0:0.#}", total) : string.Format("{0:0.##}", total);
@@ -170,6 +207,48 @@ namespace ColorMix
             catch (Exception ex)
             {
                 lblMessage.Text = ex.Message;
+            }
+        }
+
+        protected void rblBase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            using (SqlConnection dbConnection = DbHelper.GetConnection())
+            {
+                SqlCommand com = new SqlCommand("GetCodeInfoByUnitId", dbConnection) { CommandType = CommandType.StoredProcedure };
+                com.Parameters.AddWithValue("@code", lblColorCode.Text);
+                com.Parameters.AddWithValue("@unitId", int.Parse(((ListItem)sender).Value));
+
+
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+                try
+                {
+                    da.Fill(ds);
+                    formulTable = ds.Tables[0];
+
+                    if (formulTable.Rows.Count > 0)
+                    {
+                        FormulGrid.DataSource = formulTable;
+                        FormulGrid.DataBind();
+                        float total = 0;
+                        foreach (DataRow drFormul in formulTable.Rows)
+                        {
+                            total += float.Parse(drFormul["Weight"].ToString());
+                        }
+                        lblTotal.Text = lblUnit.Text.Contains("gr") ? string.Format("{0:0.#}", total) : string.Format("{0:0.##}", total);
+                    }
+                    else
+                    {
+                        lblMessage.Text = "فرمولی برای این نوع رنگ وارد نشده.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = "خطا" + ex.Message;
+                }
+                txtBuildBase.Focus();
+
             }
         }
     }

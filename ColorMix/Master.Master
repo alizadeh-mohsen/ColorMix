@@ -29,15 +29,10 @@
 </head>
 <body class="bg-light">
     <form id="form1" runat="server">
-      <%--  <nav class="navbar navbar-light bg-white">
-            <div class="container-fluid px-5">
-                <a class="navbar-brand text-danger" href="http://roham-paint.ir/">فروشگاه رنگ رهام (شریفی)</a>
-                <img class="img-fluid" src="images/Logo.png" alt="فروشگاه رنگ رهام"  />
-            </div>
-        </nav>--%>
+     
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container-fluid">
-               
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -64,29 +59,28 @@
 
                     </ul>
                 </div>
-                
+
                 <a class="navbar-brand" href="#">
-                    
-                    <img class="img-thumbnail" src="images/Logo.png" alt="فروشگاه رنگ رهام"/>
-                    
+
+                    <img class="img-thumbnail" src="images/Logo.png" alt="فروشگاه رنگ رهام" />
+
                 </a>
             </div>
         </nav>
-        
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-            <footer class="footer">
-                <div class="container">
-                    <span class="text-dark">تمامی حقوق مادی و معنوی متعلق به رنگ رهام می باشد.</span>
-                    <span class="float-left">Copyright © 2006-2021 Roham-paint.ir</span>
-                    <a href="https://www.instagram.com/range_roham/">
-                        <img class="img-fluid  mx-2" alt="Instagram"
-                            src="images/instagram.png" width="32" height="32" />
-                    </a>
-                </div>
-            </footer>
-        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer class="footer">
+            <div class="container">
+                <span class="text-dark">تمامی حقوق مادی و معنوی متعلق به رنگ رهام می باشد.
+               </span>
+                <a href="https://www.instagram.com/range_roham/">
+                    <img class="img-fluid  mx-2" alt="Instagram"
+                        src="images/instagram.png" width="32" height="32" />
+                </a>
+            </div>
+        </footer>
+
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

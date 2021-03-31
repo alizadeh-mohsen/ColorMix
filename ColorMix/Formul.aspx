@@ -103,7 +103,7 @@
 
                     <tr>
                         <td colspan="7">
-                            <asp:RadioButtonList ID="rblBase" runat="server" CssClass="spaced" OnSelectedIndexChanged="rblBase_SelectedIndexChanged" RepeatDirection="Horizontal">
+                            <asp:RadioButtonList ID="rblBase" runat="server" CssClass="spaced" OnSelectedIndexChanged="rblBase_SelectedIndexChanged" RepeatDirection="Horizontal" AutoPostBack="True">
                             </asp:RadioButtonList>
                         </td>
                     </tr>

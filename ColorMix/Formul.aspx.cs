@@ -217,7 +217,7 @@ namespace ColorMix
             {
                 SqlCommand com = new SqlCommand("GetCodeInfoByUnitId", dbConnection) { CommandType = CommandType.StoredProcedure };
                 com.Parameters.AddWithValue("@code", lblColorCode.Text);
-                com.Parameters.AddWithValue("@unitId", int.Parse(((ListItem)sender).Value));
+                com.Parameters.AddWithValue("@unitId", int.Parse(((ListControl)sender).SelectedValue));
 
 
                 SqlDataAdapter da = new SqlDataAdapter(com);

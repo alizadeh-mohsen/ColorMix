@@ -72,12 +72,13 @@
                                 GridLines="None" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" OnRowCommand="FormulGrid_RowCommand" BorderStyle="Solid">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
+                                    <asp:BoundField DataField="Weight" HeaderText="وزن" />
                                     <asp:TemplateField HeaderText="کد">
                                         <ItemTemplate>
                                             <asp:LinkButton ID="btnSelect" runat="server" CommandArgument='<%# Bind("Weight") %>' Text='<%# Bind("Code") %>' CommandName="select" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:BoundField DataField="Weight" HeaderText="وزن" />
+                                    
                                 </Columns>
                                 <EditRowStyle BackColor="#999999" />
                                 <EmptyDataRowStyle BackColor="#CCCCCC" BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
